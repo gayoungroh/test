@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+
+/* global defaults */
+*{margin:0;padding:0;box-sizing:border-box;}
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,span,th,td,legend {margin:0;padding:0;}
+	fieldset,img,abbr,acronym{border:none;}
+	fieldset{display:block;}
+	ol,ul {list-style:none outside;}
+	h1,h2,h3,h4,h5,h6,address,caption,cite,code,dfn,em,th,var {font-size:100%;font-weight:300;}
+
+	.accessibility,hr,legend,caption,hr{position:absolute; top:0; left:0; width:0; height:0; font-size:0; line-height:0; margin:0; padding:0; overflow:hidden; visibility:hidden; text-indent:-1000em;}
+
+	html {font-size:10px;} /* 10px 동일함 font-size:62.5%;  */
+	body {font-size:1.6rem;}
+	body,html{height:100%;}
+
+/* s: All Style */
+	a:link, a:visited{text-decoration:none}
+	a:hover{text-decoration:none}
+	input[type=text],input[type=email],input[type=tel],input[type=submit],input[type=password],input[type=image],input[type=button],textarea,select{ -webkit-border-radius:0; -moz-appearance:none; -webkit-appearance:none; appearance:none;}
+	select::-ms-expand {display:none}
+	input[type=radio],input[type=checkbox]{-webkit-border-radius:0; -webkit-appearance:none;/* display:none*/}
+	img,video,audio,object,embed,iframe{max-width:100%;}
+	/*:lang(zh), zh{font-family: 'Kanit', sans-serif;}*/
+	body,th,td,input,select,button,textarea{font-style:normal;font-weight:normal;font-family: 'GmarketSans','Noto Sans KR','Montserrat', sans-serif !important;color:#111;line-height:1.5;letter-spacing:-0.01em;}
+	/*'Trirong', */
+	table{width:100%;border-collapse:collapse;table-layout:fixed;}
+	figure{margin:0;padding:0;font-size:0;line-height:0;}
+
+
+:root {
+
+	--color-HN-white: rgba(18,59,154,.5);
+}
+
+
+
+/* library */
+	.tal {text-align: left !important; }
+	.tac {text-align: center !important}
+	.tar {text-align: right !important; }
+	.taj {text-align: justify !important; }
+	.vam {vertical-align:middle !important;}
+	.vat {vertical-align:top !important;}
+	.vab {vertical-align:bottom !important;}
+	.float_l {float: left; }
+	.float_r {float: right; }
+	.clear_b {clear: both; float: none; }
+	.clear_r {clear: right; float: none;}
+	.clear_l {clear: left; float: none;}
+	.normal {font-weight: normal;}
+	.block {display: block !important;}
+	.block_i {display: inline-block !important;}
+	.block_n {display: none !important;}
+	.bold {font-weight: bold;}
+	.deco_l{text-decoration:line-through;}
+	.deco_u{text-decoration:underline;}
+	.displaynone {display:none !important;}
+	.displayflex {display:flex;align-items:center;}
+	.displayflex-wrap {flex-wrap:wrap;}
+	.displayflex-spw {display:flex;justify-content:space-between;align-items:center;}
+	.displayflex-align-start {align-items:flex-start !important;}
+	.displayflex-align-end {align-items:flex-end !important;}
+	.displayflex-flex-start {justify-content:flex-start !important;}
+	.displayflex-flex-end {justify-content:flex-end !important;}
+	.position-re {position:relative !important;}
+
+	.left-dot {display:flex;align-items:center;}
+	.left-dot:before {content:"";width:5px;height:5px;background-color:#ccc;border-radius:50%;margin:0 14px;}
+	.right-dot {display:flex;align-items:center;}
+	.right-dot:after {content:"";width:5px;height:5px;background-color:#ccc;border-radius:50%;margin:0 14px;}
+
+	.f11 {font-size:11px !important;}
+	.f12 {font-size:12px !important;}
+	.f13 {font-size:13px !important;}
+	.f14 {font-size:14px !important;}
+	.f15 {font-size:15px !important;}
+	.f16 {font-size:16px !important;}
+	.f17 {font-size:17px !important;}
+	.f18 {font-size:18px !important;}
+	.f19 {font-size:19px !important;}
+	.f20 {font-size:20px !important;}
+
+	.break-all{word-break:break-all !important;}
+
+	*, :before, :after {box-sizing:border-box;word-break:keep-all;}
+	/* :focus {outline-width:1px;border:0;outline-style:solid;outline-offset:0px;} */
+
+
+/* clear style */
+	.c_box:after {content:" "; display:block; clear:both; height:0; visibility:hidden;}
+
+/* page style */
+	html, body{width:100%;min-height:100%;}
+	body.layerPopScrFixed{overflow-y:hidden;}
+
+	.ml5 {margin-left:0.3125rem !important;}
+	.ml10 {margin-left:0.625rem !important;}
+	.ml15 {margin-left:0.9375rem !important;}
+	.ml20 {margin-left:1.25rem !important;}
+	.ml60 {margin-left:3.75rem !important;}
+
+	.mt5{margin-top:0.3125rem !important}
+	.mr0{margin-right:0 !important;}
+/* Link Style */
+	a:link,
+	a:visited{text-decoration:none; color:#111;}
+	a:hover{text-decoration:none; color:#111;}
+
+
+	/*서브 커버 애니메이션*/
+	@keyframes subBg-active {
+		0%{transform:scale(1.2);}
+		100%{transform:scale(1.0);}
+	}
+
+
+	/* Scroll Bar Style :: Default */
+	/* 기본 스크롤바 커스텀 :: width -> 10px */
+	.scroll-bar-style::-webkit-scrollbar {width:1rem;height:1rem;background-color:unset;border-radius:0;padding:0;  /* 스크롤바의 너비 */}
+	.scroll-bar-style::-webkit-scrollbar-thumb {
+		display: block;
+		width: 1rem; /* 스크롤바의 길이 */
+		background-color:#a5a5a5; /* 스크롤바의 색상 */
+		border-radius: .5rem;
+		border: 0;
+		cursor: default !important;
+	}
+	.scroll-bar-style::-webkit-scrollbar-thumb:hover {
+		background-color:#801494;
+		cursor: default !important;
+	}
+	.scroll-bar-style::-webkit-scrollbar-track {
+		/*background-color: var(--color-F6); 스크롤바 뒷 배경 색상*/
+		border-radius: .5rem;
+	}
+	.scroll-bar-style::-webkit-scrollbar-button:start:decrement,
+	.scroll-bar-style::-webkit-scrollbar-button:end:increment {
+		/*  스크롤의 화살표가 포함된 영역   */
+		display: block;
+		width:1.2rem;
+		height:1.2rem;
+	}
+	.scroll-bar-style::-webkit-scrollbar-button:start:decrement {
+		background:url('../images/icon/icon-scroll-arrow-up.svg') no-repeat top center;
+		background-size:1.2rem auto;
+	}
+	.scroll-bar-style::-webkit-scrollbar-button:end:increment {
+		background:url('../images/icon/icon-scroll-arrow-down.svg') no-repeat bottom center;
+		background-size:1.2rem auto;
+	}
+
+	/* 얇은 스크롤바 커스텀 :: width >- 4px */
+	.scroll-bar-thin::-webkit-scrollbar {width:.4rem;height:.4rem;background-color:unset;border-radius:0;padding:0;  /* 스크롤바의 너비 */}
+	.scroll-bar-thin::-webkit-scrollbar-thumb {
+		display: block;
+		width: .4rem; /* 스크롤바의 길이 */
+		background-color:#a5a5a5; /* 스크롤바의 색상 */
+		border-radius: .2rem;
+		border: 0;
+		cursor: default !important;
+	}
+	.scroll-bar-thin::-webkit-scrollbar-thumb:hover {
+		background-color:#801494;
+		cursor: default !important;
+	}
+	.scroll-bar-thin::-webkit-scrollbar-track {
+		background-color: transparent;  /*스크롤바 뒷 배경 색상*/
+		border-radius: .5rem;
+	}
+	.scroll-bar-thin::-webkit-scrollbar-button:start:decrement,
+	.scroll-bar-thin::-webkit-scrollbar-button:end:increment {
+		/*  스크롤의 화살표가 포함된 영역   */
+		display: none;
+	}
+	.scroll-bar-thin::-webkit-scrollbar-button:start:decrement {
+	}
+	.scroll-bar-thin::-webkit-scrollbar-button:end:increment {
+	}
+
+	/* 셀렉트 박스내 스크롤일 경우 */
+	.scroll-bar-style.select-scroll-checkbox {margin-right:.4rem;}
+	.scroll-bar-style.select-scroll-checkbox::-webkit-scrollbar {width:.4rem;height:.4rem;border-radius:.4rem;  /* 스크롤바의 너비 */}
+	.scroll-bar-style.select-scroll-checkbox::-webkit-scrollbar-thumb {
+		width: .4rem; /* 스크롤바의 길이 */
+		border-radius: .4rem;
+	}
+	.scroll-bar-style.select-scroll-checkbox::-webkit-scrollbar-button:start:decrement {
+		/*  스크롤의 화살표가 포함된 영역   */
+		display: none;
+	}
+	.scroll-bar-style.select-scroll-checkbox::-webkit-scrollbar-button:end:increment {
+		/*  스크롤의 화살표가 포함된 영역   */
+		width: .4rem;
+		height: 1rem;
+		background: none;
+	}
